@@ -1,0 +1,1346 @@
+openapi: "3.0.0"
+
+info:
+  description: "BlockData API"
+  version: 1.0.0
+  title: BlockData API
+  license:
+    name: Apache-2.0
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+servers:
+  - url: "https://api.lucfish.com/blockData/v1"
+
+paths:
+  /category:
+    post:
+      tags:
+        - "Category"
+      summary: "创建分类"
+      description: "创建分类"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateCategoryReq"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/CreateCategoryRsp"
+        "405":
+          description: "Invalid input"
+    put:
+      tags:
+        - "Category"
+      summary: "更新分类"
+      description: "更新分类"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        content:
+          application/json:
+            schema: 
+              $ref: "#/components/schemas/UpdateCategoryReq"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UpdateCategoryRsp"
+        "405":
+          description: "Invalid input"
+
+  /category/{id}:
+    get:
+      tags:
+        - "Category"
+      summary: "查询分类"
+      description: "查询分类"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: "id"
+          in: "path"
+          description: "查询分类通过分类ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FindOneCategoryRsp"
+        "405":
+          description: "Invalid input"
+    delete:
+      tags:
+        - "Category"
+      summary: "删除分类"
+      description: "删除分类"
+      parameters:
+      - in: "header"
+        name: "Authorization"
+        description: "应用ID"
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: "id"
+        in: "path"
+        description: "删除分类"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeleteRsp"
+        "405":
+          description: "Invalid input"
+
+  /categoryResource:
+    post:
+      tags:
+        - "CategoryResource"
+      summary: "创建分类资源"
+      description: "创建分类资源"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateCategoryResourceReq"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/CreateCategoryResourceRsp"
+        "405":
+          description: "Invalid input"
+    put:
+      tags:
+        - "CategoryResource"
+      summary: "更新分类资源"
+      description: "更新分类资源"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        content:
+          application/json:
+            schema: 
+              $ref: "#/components/schemas/UpdateCategoryResourceReq"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UpdateCategoryResourceRsp"
+        "405":
+          description: "Invalid input"
+
+  /categoryResource/{id}:
+    get:
+      tags:
+        - "CategoryResource"
+      summary: "查询分类资源"
+      description: "查询分类资源"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: "id"
+          in: "path"
+          description: "查询分类资源通过分类资源ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FindOneCategoryResourceRsp"
+        "405":
+          description: "Invalid input"
+    delete:
+      tags:
+        - "CategoryResource"
+      summary: "删除分类资源"
+      description: "删除分类资源"
+      parameters:
+      - in: "header"
+        name: "Authorization"
+        description: "应用ID"
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: "id"
+        in: "path"
+        description: "删除分类资源"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeleteRsp"
+        "405":
+          description: "Invalid input"
+
+  /buildingTemplate:
+    post:
+      tags:
+        - "BuildingTemplate"
+      summary: "创建模版"
+      description: "创建模版"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateBuildingTemplateReq"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/CreateBuildingTemplateRsp"
+        "405":
+          description: "Invalid input"
+    put:
+      tags:
+        - "BuildingTemplate"
+      summary: "更新模版"
+      description: "更新模版"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        content:
+          application/json:
+            schema: 
+              $ref: "#/components/schemas/UpdateBuildingTemplateReq"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UpdateBuildingTemplateRsp"
+        "405":
+          description: "Invalid input"
+
+  /buildingTemplate/{id}:
+    get:
+      tags:
+        - "BuildingTemplate"
+      summary: "查询模版"
+      description: "查询模版"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: "id"
+          in: "path"
+          description: "查询模版通过模版ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FindOneBuildingTemplateRsp"
+        "405":
+          description: "Invalid input"
+    delete:
+      tags:
+        - "BuildingTemplate"
+      summary: "删除模版"
+      description: "删除模版"
+      parameters:
+      - in: "header"
+        name: "Authorization"
+        description: "应用ID"
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: "id"
+        in: "path"
+        description: "删除模版"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeleteRsp"
+        "405":
+          description: "Invalid input"
+
+  /building:
+    post:
+      tags:
+        - "Building"
+      summary: "创建Building"
+      description: "创建Building"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateBuildingReq"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/CreateBuildingRsp"
+        "405":
+          description: "Invalid input"
+    put:
+      tags:
+        - "Building"
+      summary: "更新Building"
+      description: "更新Building"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        content:
+          application/json:
+            schema: 
+              $ref: "#/components/schemas/UpdateBuildingReq"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UpdateBuildingRsp"
+        "405":
+          description: "Invalid input"
+
+  /building/{id}:
+    get:
+      tags:
+        - "Building"
+      summary: "查询Building"
+      description: "查询Building"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: "id"
+          in: "path"
+          description: "查询Building"
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FindOneBuildingRsp"
+        "405":
+          description: "Invalid input"
+    delete:
+      tags:
+        - "Building"
+      summary: "删除Building"
+      description: "删除Building"
+      parameters:
+      - in: "header"
+        name: "Authorization"
+        description: "应用ID"
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: "id"
+        in: "path"
+        description: "删除Building"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeleteRsp"
+        "405":
+          description: "Invalid input"
+
+  /blockConfig:
+    post:
+      tags:
+        - "BlockConfig"
+      summary: "创建BlockConfig"
+      description: "创建BlockConfig"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateBlockConfigReq"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/CreateBlockConfigRsp"
+        "405":
+          description: "Invalid input"
+    put:
+      tags:
+        - "BlockConfig"
+      summary: "更新BlockConfig"
+      description: "更新BlockConfig"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+      requestBody:
+        content:
+          application/json:
+            schema: 
+              $ref: "#/components/schemas/UpdateBlockConfigReq"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UpdateBlockConfigRsp"
+        "405":
+          description: "Invalid input"
+
+  /blockConfig/{id}:
+    get:
+      tags:
+        - "BlockConfig"
+      summary: "查询BlockConfig"
+      description: "查询BlockConfig"
+      parameters:
+        - in: "header"
+          name: "Authorization"
+          description: "应用ID"
+          required: true
+          schema:
+            type: string
+            format: string
+        - name: "id"
+          in: "path"
+          description: "查询BlockConfig"
+          required: true
+          schema:
+            type: string
+            format: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FindOneBlockConfigRsp"
+        "405":
+          description: "Invalid input"
+    delete:
+      tags:
+        - "BlockConfig"
+      summary: "删除BlockConfig"
+      description: "删除BlockConfig"
+      parameters:
+      - in: "header"
+        name: "Authorization"
+        description: "应用ID"
+        required: true
+        schema:
+          type: string
+          format: string
+      - name: "id"
+        in: "path"
+        description: "删除BlockConfig"
+        required: true
+        schema:
+          type: string
+          format: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeleteRsp"
+        "405":
+          description: "Invalid input"
+
+security:
+  - ApiKey: []
+
+components:
+  securitySchemes:
+    ApiKey:
+      type: http
+      scheme: bearer
+      
+  schemas:
+    IdsReq:
+      type: object
+      properties: 
+        ids:
+          description: 配置ID列表
+          type: array
+          items: 
+            type: string
+            format: string
+
+    Category:
+      type: object
+      properties: 
+        id:
+          description: id
+          type: string
+          format: string
+        appId:
+          type: string
+          format: string
+          description: 应用ID
+        parentId:
+          description: 父Id
+          type: string
+          format: string
+        name:
+          description: 名称
+          type: string
+          format: string
+        resource:
+          description: 来源
+          type: string
+          format: string
+        ctime:
+          description: 创建时间
+          type: integer
+          format: int64
+        mtime:
+          description: 更改时间
+          type: integer
+          format: int64
+        
+    CreateCategoryReq:
+      type: object
+      properties: 
+        parentId:
+          description: 父Id
+          type: string
+          format: string
+        name:
+          description: 名称
+          type: string
+          format: string
+        resource:
+          description: 来源
+          type: string
+          format: string
+
+    CreateCategoryRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/Category"
+
+    UpdateCategoryReq:
+      type: object
+      properties: 
+        id:
+          description: id
+          type: string
+          format: string
+        parentId:
+          description: 父Id
+          type: string
+          format: string
+        name:
+          description: 名称
+          type: string
+          format: string
+        resource:
+          description: 来源
+          type: string
+          format: string
+
+    UpdateCategoryRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/Category"
+    
+    FindOneCategoryRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/Category"
+
+    CategoryPage:
+      type: object
+      properties: 
+        content:
+          description:  翻页数据
+          type: array
+          items:
+            $ref: "#/components/schemas/Category"
+        total:
+          description: 总数量
+          type: integer
+          format: int32
+        pageNo:
+          description: 页码
+          type: integer
+          format: int32
+        pageSize:
+          description: 翻页大小
+          type: integer
+          format: int32
+        pageCount:
+          description: 翻页数量
+          type: integer
+          format: int32
+
+    CategoryPageRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          type: object
+          properties:
+            pageNo:
+                type: integer
+                format: "int32"
+                description: 页码
+            pageSize:
+              type: integer
+              format: "int32"
+              description: 翻页大小
+            pageCount:
+              type: integer
+              format: "int32"
+              description: 页数
+            total:
+              type: integer
+              format: "int32"
+              description: 总数量
+            content:
+              type: array
+              items:
+                $ref: "#/components/schemas/Category"
+
+    
+    CategoryResource:
+      type: object
+      properties: 
+        id:
+          description: id
+          type: string
+          format: string
+        appId:
+          type: string
+          format: string
+          description: 应用ID
+        categoryId:
+          description: 分类Id
+          type: string
+          format: string
+        resourceId:
+          description: 资源Id
+          type: string
+          format: string
+        ctime:
+          description: 创建时间
+          type: integer
+          format: int64
+        mtime:
+          description: 更改时间
+          type: integer
+          format: int64
+        
+    CreateCategoryResourceReq:
+      type: object
+      properties: 
+        categoryId:
+          description: 分类Id
+          type: string
+          format: string
+        resourceId:
+          description: 资源Id
+          type: string
+          format: string
+
+    CreateCategoryResourceRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/CategoryResource"
+
+    UpdateCategoryResourceReq:
+      type: object
+      properties: 
+        id:
+          description: id
+          type: string
+          format: string
+        categoryId:
+          description: 分类Id
+          type: string
+          format: string
+        resourceId:
+          description: 资源Id
+          type: string
+          format: string
+
+    UpdateCategoryResourceRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/CategoryResource"
+
+    FindOneCategoryResourceRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/CategoryResource"
+
+    CategoryResourcePage:
+      type: object
+      properties: 
+        content:
+          description:  翻页数据
+          type: array
+          items:
+            $ref: "#/components/schemas/CategoryResource"
+        total:
+          description: 总数量
+          type: integer
+          format: int32
+        pageNo:
+          description: 页码
+          type: integer
+          format: int32
+        pageSize:
+          description: 翻页大小
+          type: integer
+          format: int32
+        pageCount:
+          description: 翻页数量
+          type: integer
+          format: int32
+
+    Building:
+      type: object
+      properties: 
+        id:
+          description: id
+          type: string
+          format: string
+        appId:
+          type: string
+          format: string
+          description: 应用ID
+        templateId:
+          description: 分类Id
+          type: string
+          format: string
+        data:
+          description: 数据
+          type: object
+        creatorUid:
+          description: 创建者Id
+          type: string
+          format: string
+        ctime:
+          description: 创建时间
+          type: integer
+          format: int64
+        mtime:
+          description: 更改时间
+          type: integer
+          format: int64
+        
+    CreateBuildingReq:
+      type: object
+      properties: 
+        templateId:
+          description: 分类Id
+          type: string
+          format: string
+        data:
+          description: 数据
+          type: object
+        creatorUid:
+          description: 创建者Id
+          type: string
+          format: string
+    
+    CreateBuildingRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/Building"
+
+    UpdateBuildingReq:
+      type: object
+      properties: 
+        id:
+          description: id
+          type: string
+          format: string
+        templateId:
+          description: 分类Id
+          type: string
+          format: string
+        data:
+          description: 数据
+          type: object
+        creatorUid:
+          description: 创建者Id
+          type: string
+          format: string
+
+    UpdateBuildingRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/Building"
+
+    FindOneBuildingRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/Building"
+
+    BuildingPage:
+      type: object
+      properties: 
+        content:
+          description:  翻页数据
+          type: array
+          items:
+            $ref: "#/components/schemas/Building"
+        total:
+          description: 总数量
+          type: integer
+          format: int32
+        pageNo:
+          description: 页码
+          type: integer
+          format: int32
+        pageSize:
+          description: 翻页大小
+          type: integer
+          format: int32
+        pageCount:
+          description: 翻页数量
+          type: integer
+          format: int32
+    
+    BuildingTemplate:
+      type: object
+      properties: 
+        id:
+          description: id
+          type: string
+          format: string
+        appId:
+          type: string
+          format: string
+          description: 应用ID
+        name:
+          description: 名称
+          type: string
+          format: string
+        data:
+          description: 数据
+          type: object
+        ctime:
+          description: 创建时间
+          type: integer
+          format: int64
+        mtime:
+          description: 更改时间
+          type: integer
+          format: int64
+        
+    CreateBuildingTemplateReq:
+      type: object
+      properties: 
+        name:
+          description: 名称
+          type: string
+          format: string
+        data:
+          description: 数据
+          type: object
+    
+    CreateBuildingTemplateRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/BuildingTemplate"
+
+    UpdateBuildingTemplateReq:
+      type: object
+      properties: 
+        id:
+          description: id
+          type: string
+          format: string
+        name:
+          description: 名称
+          type: string
+          format: string
+        data:
+          description: 数据
+          type: object
+
+    UpdateBuildingTemplateRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/BuildingTemplate"
+
+    FindOneBuildingTemplateRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/BuildingTemplate"
+
+    BuildingTemplatePage:
+      type: object
+      properties: 
+        content:
+          description:  翻页数据
+          type: array
+          items:
+            $ref: "#/components/schemas/BuildingTemplate"
+        total:
+          description: 总数量
+          type: integer
+          format: int32
+        pageNo:
+          description: 页码
+          type: integer
+          format: int32
+        pageSize:
+          description: 翻页大小
+          type: integer
+          format: int32
+        pageCount:
+          description: 翻页数量
+          type: integer
+          format: int32
+
+    BlockConfig:
+      type: object
+      properties: 
+        id:
+          description: id
+          type: string
+          format: string
+        appId:
+          type: string
+          format: string
+          description: 应用ID
+        name:
+          description: 名称
+          type: string
+          format: string
+        renderData:
+          description: 渲染数据
+          type: object
+        editorData:
+          description: 编辑数据
+          type: object
+        ctime:
+          description: 创建时间
+          type: integer
+          format: int64
+        mtime:
+          description: 更改时间
+          type: integer
+          format: int64
+        
+    CreateBlockConfigReq:
+      type: object
+      properties: 
+        name:
+          description: 名称
+          type: string
+          format: string
+        renderData:
+          description: 渲染数据
+          type: object
+        editorData:
+          description: 编辑数据
+          type: object
+
+    CreateBlockConfigRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/BlockConfig"
+
+    UpdateBlockConfigReq:
+      type: object
+      properties: 
+        id:
+          description: id
+          type: string
+          format: string
+        name:
+          description: 名称
+          type: string
+          format: string
+        renderData:
+          description: 渲染数据
+          type: object
+        editorData:
+          description: 编辑数据
+          type: object
+
+    UpdateBlockConfigRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/BlockConfig"
+
+    FindOneBlockConfigRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          $ref: "#/components/schemas/BlockConfig"
+
+    BlockConfigPage:
+      type: object
+      properties: 
+        content:
+          description:  翻页数据
+          type: array
+          items:
+            $ref: "#/components/schemas/BlockConfig"
+        total:
+          description: 总数量
+          type: integer
+          format: int32
+        pageNo:
+          description: 页码
+          type: integer
+          format: int32
+        pageSize:
+          description: 翻页大小
+          type: integer
+          format: int32
+        pageCount:
+          description: 翻页数量
+          type: integer
+          format: int32
+            
+    CursorQuery:
+      type: object
+      properties: 
+        filters:
+          description: 查询条件，传键值对
+          type: object
+        cursor:
+          description: 游标值
+          type: string
+          format: string
+        cursorSort:
+          description: 排序
+            $ref:"#/components/schemas/SortSpec"
+        size:
+          description: 大小
+          type: integer
+          format: int64
+        direction:
+          description: 查询方向，0表示游标前，1表示游标后
+          type: integer
+          format: byte 
+
+    CursorExtra:
+      type: object
+      properties: 
+        size:
+          description: 大小
+          type: integer
+          format: int64
+        direction:
+          description: 查询方向，0表示游标前，1表示游标后
+          type: integer
+          format: byte
+        resourceId:
+          type: string
+          format: string
+          description: 资源ID
+      
+    DeleteRsp:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        msg:
+          type: string
+          format: string
+        data:
+          description: "暂时未返回数据"
+
+    PageQuery:
+      type: object
+      properties: 
+        filters: 
+          type: object
+          description: 查询条件，传键值对
+        pageNo: 
+          type: integer
+          format: int32
+          description: 页码
+        pageSize:
+          type: integer
+          format: int32
+          description: 每页数据量
+        sort:
+          type: array
+          items: 
+            $ref: "#/components/schemas/SortSpec"
+          description: 排序
+
+    SortSpec:
+      type: object
+      properties: 
+        property:
+          type: string
+          format: string
+          description: 排序字段
+        type:
+          type: string
+          format: string
+          description: 排序类型，0默认，1升序，2降序
+        ignoreCase:
+          type: string
+          format: string 
+          description: 是否忽略大小写
