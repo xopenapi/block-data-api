@@ -17,14 +17,6 @@ paths:
         - "Category"
       summary: "创建分类"
       description: "创建分类"
-      parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
       requestBody:
         content:
           application/json:
@@ -45,18 +37,10 @@ paths:
         - "Category"
       summary: "更新分类"
       description: "更新分类"
-      parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
       requestBody:
         content:
           application/json:
-            schema: 
+            schema:
               $ref: "#/components/schemas/UpdateCategoryReq"
       responses:
         "200":
@@ -75,13 +59,6 @@ paths:
       summary: "查询分类"
       description: "查询分类"
       parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
         - name: "id"
           in: "path"
           description: "查询分类通过分类ID"
@@ -104,20 +81,13 @@ paths:
       summary: "删除分类"
       description: "删除分类"
       parameters:
-      - in: "header"
-        name: "Authorization"
-        description: "应用ID"
-        required: true
-        schema:
-          type: string
-          format: string
-      - name: "id"
-        in: "path"
-        description: "删除分类"
-        required: true
-        schema:
-          type: string
-          format: string
+        - name: "id"
+          in: "path"
+          description: "删除分类"
+          required: true
+          schema:
+            type: string
+            format: string
       responses:
         "200":
           description: "successful operation"
@@ -134,14 +104,6 @@ paths:
         - "CategoryResource"
       summary: "创建分类资源"
       description: "创建分类资源"
-      parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
       requestBody:
         content:
           application/json:
@@ -162,18 +124,10 @@ paths:
         - "CategoryResource"
       summary: "更新分类资源"
       description: "更新分类资源"
-      parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
       requestBody:
         content:
           application/json:
-            schema: 
+            schema:
               $ref: "#/components/schemas/UpdateCategoryResourceReq"
       responses:
         "200":
@@ -192,13 +146,6 @@ paths:
       summary: "查询分类资源"
       description: "查询分类资源"
       parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
         - name: "id"
           in: "path"
           description: "查询分类资源通过分类资源ID"
@@ -221,20 +168,13 @@ paths:
       summary: "删除分类资源"
       description: "删除分类资源"
       parameters:
-      - in: "header"
-        name: "Authorization"
-        description: "应用ID"
-        required: true
-        schema:
-          type: string
-          format: string
-      - name: "id"
-        in: "path"
-        description: "删除分类资源"
-        required: true
-        schema:
-          type: string
-          format: string
+        - name: "id"
+          in: "path"
+          description: "删除分类资源"
+          required: true
+          schema:
+            type: string
+            format: string
       responses:
         "200":
           description: "successful operation"
@@ -251,14 +191,6 @@ paths:
         - "BuildingTemplate"
       summary: "创建模版"
       description: "创建模版"
-      parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
       requestBody:
         content:
           application/json:
@@ -279,18 +211,10 @@ paths:
         - "BuildingTemplate"
       summary: "更新模版"
       description: "更新模版"
-      parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
       requestBody:
         content:
           application/json:
-            schema: 
+            schema:
               $ref: "#/components/schemas/UpdateBuildingTemplateReq"
       responses:
         "200":
@@ -309,13 +233,6 @@ paths:
       summary: "查询模版"
       description: "查询模版"
       parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
         - name: "id"
           in: "path"
           description: "查询模版通过模版ID"
@@ -338,20 +255,13 @@ paths:
       summary: "删除模版"
       description: "删除模版"
       parameters:
-      - in: "header"
-        name: "Authorization"
-        description: "应用ID"
-        required: true
-        schema:
-          type: string
-          format: string
-      - name: "id"
-        in: "path"
-        description: "删除模版"
-        required: true
-        schema:
-          type: string
-          format: string
+        - name: "id"
+          in: "path"
+          description: "删除模版"
+          required: true
+          schema:
+            type: string
+            format: string
       responses:
         "200":
           description: "successful operation"
@@ -368,14 +278,6 @@ paths:
         - "Building"
       summary: "创建Building"
       description: "创建Building"
-      parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
       requestBody:
         content:
           application/json:
@@ -396,18 +298,10 @@ paths:
         - "Building"
       summary: "更新Building"
       description: "更新Building"
-      parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
       requestBody:
         content:
           application/json:
-            schema: 
+            schema:
               $ref: "#/components/schemas/UpdateBuildingReq"
       responses:
         "200":
@@ -426,13 +320,6 @@ paths:
       summary: "查询Building"
       description: "查询Building"
       parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
         - name: "id"
           in: "path"
           description: "查询Building"
@@ -455,20 +342,13 @@ paths:
       summary: "删除Building"
       description: "删除Building"
       parameters:
-      - in: "header"
-        name: "Authorization"
-        description: "应用ID"
-        required: true
-        schema:
-          type: string
-          format: string
-      - name: "id"
-        in: "path"
-        description: "删除Building"
-        required: true
-        schema:
-          type: string
-          format: string
+        - name: "id"
+          in: "path"
+          description: "删除Building"
+          required: true
+          schema:
+            type: string
+            format: string
       responses:
         "200":
           description: "successful operation"
@@ -485,14 +365,6 @@ paths:
         - "BlockConfig"
       summary: "创建BlockConfig"
       description: "创建BlockConfig"
-      parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
       requestBody:
         content:
           application/json:
@@ -513,18 +385,10 @@ paths:
         - "BlockConfig"
       summary: "更新BlockConfig"
       description: "更新BlockConfig"
-      parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
       requestBody:
         content:
           application/json:
-            schema: 
+            schema:
               $ref: "#/components/schemas/UpdateBlockConfigReq"
       responses:
         "200":
@@ -543,13 +407,6 @@ paths:
       summary: "查询BlockConfig"
       description: "查询BlockConfig"
       parameters:
-        - in: "header"
-          name: "Authorization"
-          description: "应用ID"
-          required: true
-          schema:
-            type: string
-            format: string
         - name: "id"
           in: "path"
           description: "查询BlockConfig"
@@ -572,20 +429,13 @@ paths:
       summary: "删除BlockConfig"
       description: "删除BlockConfig"
       parameters:
-      - in: "header"
-        name: "Authorization"
-        description: "应用ID"
-        required: true
-        schema:
-          type: string
-          format: string
-      - name: "id"
-        in: "path"
-        description: "删除BlockConfig"
-        required: true
-        schema:
-          type: string
-          format: string
+        - name: "id"
+          in: "path"
+          description: "删除BlockConfig"
+          required: true
+          schema:
+            type: string
+            format: string
       responses:
         "200":
           description: "successful operation"
@@ -604,21 +454,21 @@ components:
     ApiKey:
       type: http
       scheme: bearer
-      
+
   schemas:
     IdsReq:
       type: object
-      properties: 
+      properties:
         ids:
           description: 配置ID列表
           type: array
-          items: 
+          items:
             type: string
             format: string
 
     Category:
       type: object
-      properties: 
+      properties:
         id:
           description: id
           type: string
@@ -647,10 +497,10 @@ components:
           description: 更改时间
           type: integer
           format: int64
-        
+
     CreateCategoryReq:
       type: object
-      properties: 
+      properties:
         parentId:
           description: 父Id
           type: string
@@ -678,7 +528,7 @@ components:
 
     UpdateCategoryReq:
       type: object
-      properties: 
+      properties:
         id:
           description: id
           type: string
@@ -707,7 +557,7 @@ components:
           format: string
         data:
           $ref: "#/components/schemas/Category"
-    
+
     FindOneCategoryRsp:
       type: object
       properties:
@@ -722,9 +572,9 @@ components:
 
     CategoryPage:
       type: object
-      properties: 
+      properties:
         content:
-          description:  翻页数据
+          description: 翻页数据
           type: array
           items:
             $ref: "#/components/schemas/Category"
@@ -758,9 +608,9 @@ components:
           type: object
           properties:
             pageNo:
-                type: integer
-                format: "int32"
-                description: 页码
+              type: integer
+              format: "int32"
+              description: 页码
             pageSize:
               type: integer
               format: "int32"
@@ -778,10 +628,9 @@ components:
               items:
                 $ref: "#/components/schemas/Category"
 
-    
     CategoryResource:
       type: object
-      properties: 
+      properties:
         id:
           description: id
           type: string
@@ -806,10 +655,10 @@ components:
           description: 更改时间
           type: integer
           format: int64
-        
+
     CreateCategoryResourceReq:
       type: object
-      properties: 
+      properties:
         categoryId:
           description: 分类Id
           type: string
@@ -833,7 +682,7 @@ components:
 
     UpdateCategoryResourceReq:
       type: object
-      properties: 
+      properties:
         id:
           description: id
           type: string
@@ -873,9 +722,9 @@ components:
 
     CategoryResourcePage:
       type: object
-      properties: 
+      properties:
         content:
-          description:  翻页数据
+          description: 翻页数据
           type: array
           items:
             $ref: "#/components/schemas/CategoryResource"
@@ -898,7 +747,7 @@ components:
 
     Building:
       type: object
-      properties: 
+      properties:
         id:
           description: id
           type: string
@@ -926,10 +775,10 @@ components:
           description: 更改时间
           type: integer
           format: int64
-        
+
     CreateBuildingReq:
       type: object
-      properties: 
+      properties:
         templateId:
           description: 分类Id
           type: string
@@ -941,7 +790,7 @@ components:
           description: 创建者Id
           type: string
           format: string
-    
+
     CreateBuildingRsp:
       type: object
       properties:
@@ -956,7 +805,7 @@ components:
 
     UpdateBuildingReq:
       type: object
-      properties: 
+      properties:
         id:
           description: id
           type: string
@@ -999,9 +848,9 @@ components:
 
     BuildingPage:
       type: object
-      properties: 
+      properties:
         content:
-          description:  翻页数据
+          description: 翻页数据
           type: array
           items:
             $ref: "#/components/schemas/Building"
@@ -1021,10 +870,10 @@ components:
           description: 翻页数量
           type: integer
           format: int32
-    
+
     BuildingTemplate:
       type: object
-      properties: 
+      properties:
         id:
           description: id
           type: string
@@ -1048,10 +897,10 @@ components:
           description: 更改时间
           type: integer
           format: int64
-        
+
     CreateBuildingTemplateReq:
       type: object
-      properties: 
+      properties:
         name:
           description: 名称
           type: string
@@ -1059,7 +908,7 @@ components:
         data:
           description: 数据
           type: object
-    
+
     CreateBuildingTemplateRsp:
       type: object
       properties:
@@ -1074,7 +923,7 @@ components:
 
     UpdateBuildingTemplateReq:
       type: object
-      properties: 
+      properties:
         id:
           description: id
           type: string
@@ -1113,9 +962,9 @@ components:
 
     BuildingTemplatePage:
       type: object
-      properties: 
+      properties:
         content:
-          description:  翻页数据
+          description: 翻页数据
           type: array
           items:
             $ref: "#/components/schemas/BuildingTemplate"
@@ -1138,7 +987,7 @@ components:
 
     BlockConfig:
       type: object
-      properties: 
+      properties:
         id:
           description: id
           type: string
@@ -1165,10 +1014,10 @@ components:
           description: 更改时间
           type: integer
           format: int64
-        
+
     CreateBlockConfigReq:
       type: object
-      properties: 
+      properties:
         name:
           description: 名称
           type: string
@@ -1194,7 +1043,7 @@ components:
 
     UpdateBlockConfigReq:
       type: object
-      properties: 
+      properties:
         id:
           description: id
           type: string
@@ -1236,9 +1085,9 @@ components:
 
     BlockConfigPage:
       type: object
-      properties: 
+      properties:
         content:
-          description:  翻页数据
+          description: 翻页数据
           type: array
           items:
             $ref: "#/components/schemas/BlockConfig"
@@ -1258,10 +1107,10 @@ components:
           description: 翻页数量
           type: integer
           format: int32
-            
+
     CursorQuery:
       type: object
-      properties: 
+      properties:
         filters:
           description: 查询条件，传键值对
           type: object
@@ -1279,11 +1128,11 @@ components:
         direction:
           description: 查询方向，0表示游标前，1表示游标后
           type: integer
-          format: byte 
+          format: byte
 
     CursorExtra:
       type: object
-      properties: 
+      properties:
         size:
           description: 大小
           type: integer
@@ -1296,7 +1145,7 @@ components:
           type: string
           format: string
           description: 资源ID
-      
+
     DeleteRsp:
       type: object
       properties:
@@ -1311,11 +1160,11 @@ components:
 
     PageQuery:
       type: object
-      properties: 
-        filters: 
+      properties:
+        filters:
           type: object
           description: 查询条件，传键值对
-        pageNo: 
+        pageNo:
           type: integer
           format: int32
           description: 页码
@@ -1325,13 +1174,13 @@ components:
           description: 每页数据量
         sort:
           type: array
-          items: 
+          items:
             $ref: "#/components/schemas/SortSpec"
           description: 排序
 
     SortSpec:
       type: object
-      properties: 
+      properties:
         property:
           type: string
           format: string
@@ -1342,5 +1191,5 @@ components:
           description: 排序类型，0默认，1升序，2降序
         ignoreCase:
           type: string
-          format: string 
+          format: string
           description: 是否忽略大小写
