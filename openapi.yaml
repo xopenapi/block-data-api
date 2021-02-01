@@ -15,6 +15,7 @@ paths:
     post:
       tags:
         - "Category"
+      operationId: createCategory
       summary: "创建分类"
       description: "创建分类"
       requestBody:
@@ -35,6 +36,7 @@ paths:
     put:
       tags:
         - "Category"
+      operationId: updateCategory
       summary: "更新分类"
       description: "更新分类"
       requestBody:
@@ -56,6 +58,7 @@ paths:
     get:
       tags:
         - "Category"
+      operationId: getCategory
       summary: "查询分类"
       description: "查询分类"
       parameters:
@@ -78,6 +81,7 @@ paths:
     delete:
       tags:
         - "Category"
+      operationId: deleteCategory
       summary: "删除分类"
       description: "删除分类"
       parameters:
@@ -102,6 +106,7 @@ paths:
     post:
       tags:
         - "CategoryResource"
+      operationId: createCategoryResource
       summary: "创建分类资源"
       description: "创建分类资源"
       requestBody:
@@ -122,6 +127,7 @@ paths:
     put:
       tags:
         - "CategoryResource"
+      operationId: updateCategoryResource
       summary: "更新分类资源"
       description: "更新分类资源"
       requestBody:
@@ -143,6 +149,7 @@ paths:
     get:
       tags:
         - "CategoryResource"
+      operationId: getCategoryResource
       summary: "查询分类资源"
       description: "查询分类资源"
       parameters:
@@ -165,6 +172,7 @@ paths:
     delete:
       tags:
         - "CategoryResource"
+      operationId: deleteCategoryResource
       summary: "删除分类资源"
       description: "删除分类资源"
       parameters:
@@ -189,6 +197,7 @@ paths:
     post:
       tags:
         - "BuildingTemplate"
+      operationId: createBuildingTemplate
       summary: "创建模版"
       description: "创建模版"
       requestBody:
@@ -209,6 +218,7 @@ paths:
     put:
       tags:
         - "BuildingTemplate"
+      operationId: updateBuildingTemplate
       summary: "更新模版"
       description: "更新模版"
       requestBody:
@@ -230,6 +240,7 @@ paths:
     get:
       tags:
         - "BuildingTemplate"
+      operationId: getBuildingTemplate
       summary: "查询模版"
       description: "查询模版"
       parameters:
@@ -252,6 +263,7 @@ paths:
     delete:
       tags:
         - "BuildingTemplate"
+      operationId: deleteBuildingTemplate
       summary: "删除模版"
       description: "删除模版"
       parameters:
@@ -276,6 +288,7 @@ paths:
     post:
       tags:
         - "Building"
+      operationId: createBuilding
       summary: "创建Building"
       description: "创建Building"
       requestBody:
@@ -296,6 +309,7 @@ paths:
     put:
       tags:
         - "Building"
+      operationId: updateBuilding
       summary: "更新Building"
       description: "更新Building"
       requestBody:
@@ -317,6 +331,7 @@ paths:
     get:
       tags:
         - "Building"
+      operationId: getBuilding
       summary: "查询Building"
       description: "查询Building"
       parameters:
@@ -339,6 +354,7 @@ paths:
     delete:
       tags:
         - "Building"
+      operationId: deleteBuilding
       summary: "删除Building"
       description: "删除Building"
       parameters:
@@ -363,6 +379,7 @@ paths:
     post:
       tags:
         - "BlockConfig"
+      operationId: createBlockConfig
       summary: "创建BlockConfig"
       description: "创建BlockConfig"
       requestBody:
@@ -383,6 +400,7 @@ paths:
     put:
       tags:
         - "BlockConfig"
+      operationId: updateBlockConfig
       summary: "更新BlockConfig"
       description: "更新BlockConfig"
       requestBody:
@@ -404,6 +422,7 @@ paths:
     get:
       tags:
         - "BlockConfig"
+      operationId: getBlockConfig
       summary: "查询BlockConfig"
       description: "查询BlockConfig"
       parameters:
@@ -426,6 +445,7 @@ paths:
     delete:
       tags:
         - "BlockConfig"
+      operationId: deleteBlockConfig
       summary: "删除BlockConfig"
       description: "删除BlockConfig"
       parameters:
